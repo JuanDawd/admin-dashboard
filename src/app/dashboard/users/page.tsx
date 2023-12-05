@@ -1,9 +1,11 @@
-import React from 'react'
-import styles from '@/app/UI/Dashboard/Users/Users.module.css'
-import Search from '@/app/UI/Dashboard/Search/Search'
-import Link from 'next/link'
-import Image from 'next/image'
+'use client'
+
 import Pagination from '@/app/UI/Dashboard/Pagination/Pagination'
+import Search from '@/app/UI/Dashboard/Search/Search'
+import styles from '@/app/UI/Dashboard/Users/Users.module.css'
+import Image from 'next/image'
+import Link from 'next/link'
+import React from 'react'
 
 const UsersPage = () => {
 	return (

@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react'
 
-import styles from '@/app/UI/dashboard/dashboard.module.css'
 import Navbar from '@/app/UI/Dashboard/Navbar/Navbar'
 import Sidebar from '@/app/UI/Dashboard/Sidebar/Sidebar'
+import styles from '@/app/UI/dashboard/dashboard.module.css'
 import Footer from '../UI/Dashboard/Footer/Footer'
 
 type layoutProps = {

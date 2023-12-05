@@ -1,3 +1,5 @@
+'use client'
+
 import Pagination from '@/app/UI/Dashboard/Pagination/Pagination'
 import styles from '@/app/UI/Dashboard/Products/Products.module.css'
 import Search from '@/app/UI/Dashboard/Search/Search'
