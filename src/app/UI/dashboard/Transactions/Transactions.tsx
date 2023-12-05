@@ -17,14 +17,16 @@ const Transactions = () => {
 				<tbody>
 					<tr>
 						<td>
-							<Image
-								src='/noAvatar.png'
-								alt='name'
-								width={40}
-								height={40}
-								className={styles.userImage}
-							/>
-							John Doe
+							<div className={styles.user}>
+								<Image
+									src='/noAvatar.png'
+									alt='name'
+									width={40}
+									height={40}
+									className={styles.userImage}
+								/>
+								John Doe
+							</div>
 						</td>
 						<td>
 							<span className={`${styles.status} ${styles.pending}`}>
@@ -36,14 +38,16 @@ const Transactions = () => {
 					</tr>
 					<tr>
 						<td>
-							<Image
-								src='/noAvatar.png'
-								alt='name'
-								width={40}
-								height={40}
-								className={styles.userImage}
-							/>
-							John Doe
+							<div className={styles.user}>
+								<Image
+									src='/noAvatar.png'
+									alt='name'
+									width={40}
+									height={40}
+									className={styles.userImage}
+								/>
+								John Doe
+							</div>
 						</td>
 						<td>
 							<span className={`${styles.status} ${styles.done}`}>Done</span>
@@ -53,14 +57,16 @@ const Transactions = () => {
 					</tr>
 					<tr>
 						<td>
-							<Image
-								src='/noAvatar.png'
-								alt='name'
-								width={40}
-								height={40}
-								className={styles.userImage}
-							/>
-							John Doe
+							<div className={styles.user}>
+								<Image
+									src='/noAvatar.png'
+									alt='name'
+									width={40}
+									height={40}
+									className={styles.userImage}
+								/>
+								John Doe
+							</div>
 						</td>
 						<td>
 							<span className={`${styles.status} ${styles.cancelled}`}>
