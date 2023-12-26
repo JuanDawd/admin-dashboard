@@ -1,9 +1,10 @@
 import React from 'react'
 import styles from '@/app/UI/Dashboard/Users/AddUser/AddUser.module.css'
+import { addUser } from '@/app/lib/actions'
 const AddUserPage = () => {
 	return (
 		<div className={styles.container}>
-			<form className={styles.form}>
+			<form action={addUser} className={styles.form}>
 				<input type='text' placeholder='username' name='username' required />
 				<input type='email' placeholder='email' name='email' required />
 				<input
@@ -23,12 +24,7 @@ const AddUserPage = () => {
 					<option value={'true'}>Yes</option>
 					<option value={'false'}>No</option>
 				</select>
-				<textarea
-					name='address'
-					id='address'
-					rows={16}
-					placeholder='Address'
-				></textarea>
+				<textarea name='address' id='address' rows={16} placeholder='Address' />
 				<button type='submit'>Submit</button>
 			</form>
 		</div>
