@@ -1,38 +1,28 @@
 'use server'
 
-import bcrypt from 'bcrypt'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 import { Product, User } from './models'
 import {
 	ProductFormType,
-	ProductType,
 	ProductUpdateType,
 	UserFormType,
-	UserType,
 	UserUpdateType,
 } from './types'
 import { connectToDB } from './utils'
 import { fetchUser } from './data'
 
 export const addUser = async (formData: FormData) => {
-	const { username, email, password, phone, address, isAdmin, isActive } =
-		extractUserValues(formData)
+	const { username, email, phone, address } = extractUserValues(formData)
 
 	try {
 		connectToDB()
 
-		const salt = await bcrypt.genSalt(10)
-		const hashedPassword = await bcrypt.hash(password, salt)
-
 		const newUser = new User({
 			username,
 			email,
-			password: hashedPassword,
 			phone: verifyNumber(phone),
 			address,
-			isAdmin,
-			isActive,
 		})
 
 		await newUser.save()
@@ -48,8 +38,7 @@ export const addUser = async (formData: FormData) => {
 export const updateUser = async (formData: FormData) => {
 	const id = formData.get('_id')?.toString() || ''
 
-	const { username, email, password, phone, address, isAdmin, isActive } =
-		extractUserValues(formData)
+	const { username, email, phone, address } = extractUserValues(formData)
 
 	const { user } = await fetchUser(id)
 
@@ -59,20 +48,11 @@ export const updateUser = async (formData: FormData) => {
 		const updateFields: UserUpdateType = {
 			username,
 			email,
-			password,
 			phone,
 			address,
-			isAdmin,
-			isActive,
 		}
 
 		Object.keys(updateFields).forEach((key) => {
-			if (key === 'isAdmin' && updateFields['isAdmin'] === user.isAdmin)
-				delete updateFields['isAdmin']
-
-			if (key === 'isActive' && updateFields['isActive'] === user.isActive)
-				delete updateFields['isActive']
-
 			updateFields[key] === '' && delete updateFields[key]
 		})
 		if (Object.keys(updateFields).length > 0)
@@ -187,20 +167,14 @@ export const deleteProduct = async (formData: FormData) => {
 const extractUserValues = (formData: FormData): UserFormType => {
 	const username = formData.get('username')?.toString() || '',
 		email = formData.get('email')?.toString() || '',
-		password = formData.get('password')?.toString() || '',
 		phone = formData.get('phone')?.toString(),
-		address = formData.get('address')?.toString() || '',
-		isAdmin = verifyBoolean(formData.get('isAdmin')?.toString()),
-		isActive = verifyBoolean(formData.get('isActive')?.toString())
+		address = formData.get('address')?.toString() || ''
 
 	return {
 		username,
 		email,
-		password,
 		phone,
 		address,
-		isAdmin,
-		isActive,
 	}
 }
 
@@ -214,13 +188,7 @@ const extractProductValues = (formData: FormData): ProductFormType => {
 
 	return { title, desc, price, stock, color, size } as ProductFormType
 }
-const verifyBoolean = (value: string | undefined): boolean => {
-	console.log(value)
-	if (value !== undefined) {
-		return JSON.parse(value)
-	}
-	return false
-}
+
 const verifyNumber = (value: number | string | undefined): number => {
 	if (typeof value === 'number') return value
 	if (value !== undefined) {

@@ -14,20 +14,8 @@ const userSchema = new mongoose.Schema(
 			required: true,
 			unique: true,
 		},
-		password: {
-			type: String,
-			required: true,
-		},
 		img: {
 			type: String,
-		},
-		isAdmin: {
-			type: Boolean,
-			default: false,
-		},
-		isActive: {
-			type: Boolean,
-			default: true,
 		},
 		phone: {
 			type: String,
@@ -73,5 +61,6 @@ const productSchema = new mongoose.Schema(
 	{ timestamps: true },
 )
 
-export const User = mongoose.model('User', userSchema)
-export const Product = mongoose.model('Product', productSchema)
+export const User = mongoose.models.User || mongoose.model('User', userSchema)
+export const Product =
+	mongoose.models.Product || mongoose.model('Product', productSchema)

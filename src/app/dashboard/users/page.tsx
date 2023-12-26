@@ -26,8 +26,6 @@ const UsersPage = async ({ searchParams }: any) => {
 						<td>Name</td>
 						<td>Email</td>
 						<td>Created At</td>
-						<td>Role</td>
-						<td>Status</td>
 						<td>Action</td>
 					</tr>
 				</thead>
@@ -49,8 +47,6 @@ const UsersPage = async ({ searchParams }: any) => {
 							</td>
 							<td>{user.email}</td>
 							<td>{user.createdAt.toString().slice(4, 16)}</td>
-							<td>{user.isAdmin ? 'Admin' : 'Client'}</td>
-							<td>{user.isActive ? 'Active' : 'Passive'}</td>
 
 							<td>
 								<div className={styles.buttons}>

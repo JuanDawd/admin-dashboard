@@ -2,10 +2,7 @@ export type UserType = {
 	_id: string
 	username: string
 	email: string
-	password: string
 	img: string
-	isAdmin: boolean
-	isActive: boolean
 	phone: string
 	address: string
 	createdAt: Date
@@ -14,11 +11,8 @@ export type UserType = {
 export type UserFormType = {
 	username: string
 	email: string
-	password: string
 	phone: number | string | undefined
 	address: string
-	isAdmin: boolean
-	isActive: boolean
 
 	[key: string]: string | number | boolean | undefined
 }
@@ -26,11 +20,8 @@ export type UserFormType = {
 export type UserUpdateType = {
 	username?: string
 	email?: string
-	password?: string
 	phone?: number | string | undefined
 	address?: string
-	isAdmin?: boolean
-	isActive?: boolean
 
 	[key: string]: string | number | boolean | undefined
 }

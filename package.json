@@ -17,11 +17,10 @@
     "recharts": "^2.10.3"
   },
   "devDependencies": {
-    "@types/bcrypt": "^5.0.2",
+    "@auth0/nextjs-auth0": "^3.5.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "bcrypt": "^5.1.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.3",
     "mongoose": "^8.0.2",

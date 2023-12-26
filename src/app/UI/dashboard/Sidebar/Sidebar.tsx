@@ -14,6 +14,7 @@ import {
 } from 'react-icons/md'
 import MenuLink from './MenuLink/MenuLink'
 import Image from 'next/image'
+import ProfileClient from '../ProfileClient/ProfileClient'
 
 const menuItems = [
 	{
@@ -81,19 +82,7 @@ const menuItems = [
 const Sidebar = () => {
 	return (
 		<div className={styles.container}>
-			<div className={styles.user}>
-				<Image
-					className={styles.userImage}
-					src='/noAvatar.png'
-					alt={'avatar'}
-					width='50'
-					height='50'
-				/>
-				<div className={styles.userDetail}>
-					<span className={styles.username}>John Joe</span>
-					<span className={styles.userTitle}>Administrator</span>
-				</div>
-			</div>
+			<ProfileClient />
 			<ul className={styles.list}>
 				{menuItems.map((cat, key) => (
 					<li key={cat.title + key}>

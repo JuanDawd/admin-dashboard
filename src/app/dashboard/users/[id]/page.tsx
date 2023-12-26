@@ -23,13 +23,11 @@ const SingleUserPage = async ({ params }: Params) => {
 					<input type='text' name='username' placeholder={user.username} />
 					<label>Email</label>
 					<input type='email' name='email' placeholder={user.email} />
-					<label>Password</label>
-					<input type='password' name='password' placeholder={user.password} />
 					<label>Phone</label>
 					<input type='text' name='phone' placeholder={user.phone} />
 					<label>Address</label>
 					<textarea name='address' placeholder={user.address} />
-					<label>Is Admin?</label>
+					{/* <label>Is Admin?</label>
 					<select name='isAdmin' id='isAdmin'>
 						<option value={'true'} selected={user.isAdmin}>
 							Yes
@@ -38,15 +36,8 @@ const SingleUserPage = async ({ params }: Params) => {
 							No
 						</option>
 					</select>
-					<label>Is Active?</label>
-					<select name='isActive' id='isActive'>
-						<option value={'true'} selected={user.isActive}>
-							Yes
-						</option>
-						<option value={'false'} selected={!user.isActive}>
-							No
-						</option>
-					</select>
+					<label>Is Active?</label> */}
+
 					<button>Update</button>
 				</form>
 			</div>
