@@ -1,4 +1,5 @@
 'use client'
+
 import React from 'react'
 import styles from './Navbar.module.css'
 import {
@@ -30,11 +31,7 @@ const Navbar = () => {
 					<MdOutlineChat size={20} />
 					<MdNotifications size={20} />
 					<MdPublic size={20} />
-					{!user ? (
-						<a href='/api/auth/login'>Login</a>
-					) : (
-						<a href='/api/auth/logout'>Logout</a>
-					)}
+					{user && <a href='/api/auth/logout'>Logout</a>}
 				</div>
 			</div>
 		</div>

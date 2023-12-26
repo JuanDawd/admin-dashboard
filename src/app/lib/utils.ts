@@ -10,4 +10,3 @@ export const connectToDB = async () => {
 		throw new Error(e)
 	}
 }
- 

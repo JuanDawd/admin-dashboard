@@ -13,7 +13,6 @@ import {
 	MdLogout,
 } from 'react-icons/md'
 import MenuLink from './MenuLink/MenuLink'
-import Image from 'next/image'
 import ProfileClient from '../ProfileClient/ProfileClient'
 
 const menuItems = [

@@ -1,4 +1,5 @@
 'use client'
+
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import React from 'react'
 import { MdSearch } from 'react-icons/md'
