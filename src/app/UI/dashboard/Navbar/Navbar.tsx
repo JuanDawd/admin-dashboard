@@ -9,15 +9,18 @@ import {
 } from 'react-icons/md'
 import { usePathname } from 'next/navigation'
 import { useUser } from '@auth0/nextjs-auth0/client'
-import ProfileClient from '../ProfileClient/ProfileClient'
 
 const Navbar = () => {
 	const pathname = usePathname()
 	const { user } = useUser()
-
+	const handleTitle = () => {
+		return pathname.split('/').pop() === ''
+			? 'Dashboard'
+			: pathname.split('/').pop()
+	}
 	return (
 		<div className={styles.container}>
-			<div className={styles.title}>{pathname.split('/').pop()}</div>
+			<div className={styles.title}>{handleTitle()}</div>
 			<div className={styles.menu}>
 				<div className={styles.search}>
 					<MdSearch />

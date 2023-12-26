@@ -22,22 +22,22 @@ const menuItems = [
 		list: [
 			{
 				title: 'Dashboard',
-				path: '/dashboard',
+				path: '/',
 				icon: <MdDashboard />,
 			},
 			{
 				title: 'Users',
-				path: '/dashboard/users',
+				path: '/users',
 				icon: <MdSupervisedUserCircle />,
 			},
 			{
 				title: 'Products',
-				path: '/dashboard/products',
+				path: '/products',
 				icon: <MdShoppingBag />,
 			},
 			{
 				title: 'Transactions',
-				path: '/dashboard/transactions',
+				path: '/transactions',
 				icon: <MdAttachMoney />,
 			},
 		],
@@ -47,17 +47,17 @@ const menuItems = [
 		list: [
 			{
 				title: 'Revenue',
-				path: '/dashboard/revenue',
+				path: '/revenue',
 				icon: <MdWork />,
 			},
 			{
 				title: 'Reports',
-				path: '/dashboard/reports',
+				path: '/reports',
 				icon: <MdAnalytics />,
 			},
 			{
 				title: 'Teams',
-				path: '/dashboard/teams',
+				path: '/teams',
 				icon: <MdPeople />,
 			},
 		],
@@ -67,12 +67,12 @@ const menuItems = [
 		list: [
 			{
 				title: 'Settings',
-				path: '/dashboard/settings',
+				path: '/settings',
 				icon: <MdOutlineSettings />,
 			},
 			{
 				title: 'Help',
-				path: '/dashboard/help',
+				path: '/help',
 				icon: <MdHelpCenter />,
 			},
 		],

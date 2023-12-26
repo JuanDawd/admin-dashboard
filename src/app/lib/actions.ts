@@ -31,8 +31,8 @@ export const addUser = async (formData: FormData) => {
 		throw new Error('Failed to create user!')
 	}
 
-	revalidatePath('/dashboard/users')
-	redirect('/dashboard/users')
+	revalidatePath('/users')
+	redirect('/users')
 }
 
 export const updateUser = async (formData: FormData) => {
@@ -62,8 +62,8 @@ export const updateUser = async (formData: FormData) => {
 		throw new Error('Failed to update user!')
 	}
 
-	revalidatePath('/dashboard/users')
-	redirect('/dashboard/users')
+	revalidatePath('/users')
+	redirect('/users')
 }
 
 export const addProduct = async (formData: FormData) => {
@@ -88,8 +88,8 @@ export const addProduct = async (formData: FormData) => {
 		throw new Error('Failed to create product!')
 	}
 
-	revalidatePath('/dashboard/products')
-	redirect('/dashboard/products')
+	revalidatePath('/products')
+	redirect('/products')
 }
 
 export const updateProduct = async (formData: FormData) => {
@@ -120,8 +120,8 @@ export const updateProduct = async (formData: FormData) => {
 		throw new Error('Failed to update product!')
 	}
 
-	revalidatePath('/dashboard/products')
-	redirect('/dashboard/products')
+	revalidatePath('/products')
+	redirect('/products')
 }
 
 export const deleteUser = async (formData: FormData) => {
@@ -135,7 +135,7 @@ export const deleteUser = async (formData: FormData) => {
 		throw new Error('Failed to delete user!')
 	}
 
-	revalidatePath('/dashboard/products')
+	revalidatePath('/products')
 }
 
 export const deleteProduct = async (formData: FormData) => {
@@ -149,7 +149,7 @@ export const deleteProduct = async (formData: FormData) => {
 		throw new Error('Failed to delete product!')
 	}
 
-	revalidatePath('/dashboard/products')
+	revalidatePath('/products')
 }
 
 // export const authenticate = async (

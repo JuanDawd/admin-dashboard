@@ -16,7 +16,7 @@ const UsersPage = async ({ searchParams }: any) => {
 		<div className={styles.container}>
 			<div className={styles.top}>
 				<Search placeholder='Search for a user...' />
-				<Link href='/dashboard/users/add'>
+				<Link href='/users/add'>
 					<button className={styles.addButton}>Add New</button>
 				</Link>
 			</div>
@@ -50,7 +50,7 @@ const UsersPage = async ({ searchParams }: any) => {
 
 							<td>
 								<div className={styles.buttons}>
-									<Link href={`/dashboard/users/${user._id}`}>
+									<Link href={`/users/${user._id}`}>
 										<button className={`${styles.button} ${styles.view}`}>
 											View
 										</button>
